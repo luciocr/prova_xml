@@ -40,7 +40,7 @@ def main():
     n_righe=0
 
     try:
-                dbPG = psycopg2.connect("dbname='nina' user='c_dati' host='10.127.144.202' password='c_dati12'")
+                dbPG = psycopg2.connect("dbname='nina' user='xxxx' host='10.127.144.202' password='xxxxx'")
                 datiPG = dbPG.cursor()
                 datiPG2 = dbPG.cursor()
                 logger.info('Connessione postgresql ok')
@@ -49,7 +49,7 @@ def main():
                 return
 
 #===========Apro la connessione ftp e leggo i file che ci sono
-    ftp_conn = ftplib.FTP ('ftp.arpa.piemonte.it','ltfsas','Ltfsas2012')
+    ftp_conn = ftplib.FTP ('ftp.xxxx','xxxx','xxxxx')
     ftp_conn.cwd('export_giorn')
     file_misure = ftp_conn.nlst() #faccio un ls della directory e lo memorizzo in file_misure
 
@@ -74,7 +74,7 @@ def main():
             file_imp = string.replace(os.path.basename(file_xml),'.','_') #uso il nome del file di import per dare il nome al file sql
 #inizializzo la Connessione PG
             try:
-                dbPG = psycopg2.connect("dbname='nina' user='c_dati' host='10.127.144.202' password='c_dati12'")
+                dbPG = psycopg2.connect("dbname='nina' user='xxxx' host='10.127.144.202' password='xxxx'")
                 datiPG = dbPG.cursor()
                 datiPG2 = dbPG.cursor()
                 logger.info('Connessione postgresql ok')
